@@ -1,5 +1,20 @@
 <h1>Commits</h1>
 
-<div>
-  Commits list
+<div class="commits-table">
+  <table class="table table-striped">
+    <thead>
+      <th scope="col">Author</th>
+      <th scope="col">Message</th>
+      <th scope="col">URL</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let commit of commits | async">
+        <td scope="row">{{ commit.commit.author.name }}</td>
+        <td>{{ commit.commit.message }}</td>
+        <td>
+          <a [href]="commit.html_url" target="_blank">GO</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </div>
