@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 
 import { HttpClient } from '@angular/common/http';
 
+import { REPO_AUTHOR, REPO_NAME } from '../app-config';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -11,6 +13,6 @@ export class CommitListService {
   ) {}
 
   getCommits() {
-    return this.http.get('https://api.github.com/repos/webdevboy/Crossroads-take-home/commits');
+    return this.http.get(`https://api.github.com/repos/${REPO_AUTHOR}/${REPO_NAME}/commits`);
   }
 }
