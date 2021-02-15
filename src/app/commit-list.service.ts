@@ -6,8 +6,6 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class CommitListService {
-  items = [];
-
   constructor(
     private http: HttpClient
   ) {}
